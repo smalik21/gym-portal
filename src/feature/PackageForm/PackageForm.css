@@ -1,0 +1,142 @@
+.PackageForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.PackageForm .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 30rem;
+  padding: 2rem;
+  gap: 2.5rem;
+  background: #f0eef6;
+  border-radius: 0.37rem;
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.142); 
+}
+
+.PackageForm .form-heading {
+  margin: 0;
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+.PackageForm .form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem 1rem;
+  /* border: 1px solid; */
+}
+
+.PackageForm .submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #98DE7F;
+  border-radius: 0.37rem;
+  border: 1px solid;
+}
+
+.PackageForm .submit-button:hover {
+  cursor: pointer;
+  color: white;
+    background-color: #54ad34;
+    border-color: #77e051;
+}
+
+.PackageForm .submit-button:active {
+  background-color: #98DE7F;
+}
+
+.PackageForm .close-button {
+  position: absolute;
+  margin-left: 32rem;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: #FE968F;
+  border-radius: 0 0.37rem;
+  border: 1px solid;
+}
+
+.PackageForm .close-button:hover {
+  cursor: pointer;
+  color: white;
+    background: #f94336;
+    border-color: #f94336;
+}
+
+.PackageForm .close-button:active {
+  background: #FE968F;
+}
+
+@media (max-width: 600px) {
+  .PackageForm {
+    position: absolute;
+  }
+
+  .PackageForm .form-container {
+    /* justify-content: center; */
+    align-items: center;
+    width: 20rem;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .PackageForm .form-fields {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .PackageForm .form-heading {
+    font-size: 1.2rem;
+    width: fit-content;
+  }
+
+  .PackageForm .close-button {
+    margin-left: 20rem;
+    margin-top: -1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .PackageForm .form-container {
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 20rem; */
+    padding: 1rem 0;
+    gap: 1.5rem;
+  }
+
+  .PackageForm .close-button {
+    margin-left: 18.5rem;
+    /* margin-top: -1rem; */
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .PackageForm .submit-button {
+    font-size: 0.8rem;
+  }
+}

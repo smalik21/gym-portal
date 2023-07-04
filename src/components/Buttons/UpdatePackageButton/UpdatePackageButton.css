@@ -1,0 +1,35 @@
+
+.UpdatePackageButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 3rem;
+    color: rgba(0, 0, 0, 0.664);
+    background-color: #F1D779;
+    border-radius: 0.4rem;
+    border: 1px solid;
+    
+    margin-left: 10rem;
+    margin-top: -1.5rem;
+}
+
+.UpdatePackageButton:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #f6c925;
+    border-color: #f6c925;
+}
+
+.UpdatePackageButton:active {
+    background-color: #F1D779;
+}
+
+@media (max-width: 768px) {
+    .UpdatePackageButton {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-left: 9.5rem;
+        margin-top: -1rem;
+    }
+}

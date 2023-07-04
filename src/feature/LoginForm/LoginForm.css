@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap');
+
+.LoginForm {
+    display: flex;
+    width: fit-content;
+    text-align: center;
+    padding-right: 150px;
+    font-family: 'Inter', sans-serif;
+    /* border: 1px solid black; */
+}
+
+.account-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: none;
+    /* border: 1px solid red; */
+}
+
+.account-type h1 {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    /* border: 1px solid black; */
+}
+
+.account-type .account-type-buttons {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px 0px 0px 25px;
+    background: none;
+}
+
+.account-type .account-type-buttons button {
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.account-type-buttons button:nth-child(1) {
+    border-radius: 25px 0px 0px 0px;
+}
+
+
+.account-type-buttons button:nth-child(3) {
+    border-radius: 0px 0px 0px 25px;
+}
+
+.account-type .account-type-buttons button:hover {
+    cursor: pointer;
+    background-color: #72b8592e;
+}
+
+.account-type .account-type-buttons button.selected {
+    color: #272727;
+    background-color: #72B859;
+}
+
+.LoginForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 15rem;
+    height: 280px;
+    padding: 20px 5rem;
+    border-radius: 25px 25px 25px 0px;
+    background: #72B859;
+    /* border: 1px solid red; */
+}
+
+.LoginForm form h1 {
+    font-size: 18px;
+    color: #3C3C3C;
+    /* border: 1px solid black; */
+}
+
+.LoginForm form div.line {
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: #3c3c3c75;
+}
+
+.LoginForm form button {
+    height: 35px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    background-color: #272727;
+}
+
+.LoginForm form button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .LoginForm {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .account-type {
+        align-items: center;
+    }
+
+    .account-type .account-type-buttons {
+        border-radius: 25px;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .account-type-buttons button:nth-child(1) {
+        border-radius: 25px 25px 0px 0px;
+    }
+    
+    .account-type-buttons button:nth-child(3) {
+        border-radius: 0px 0px 25px 25px;
+    }
+
+    .LoginForm form {
+        width: auto;
+        border-radius: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .LoginForm form {
+        position: relative;
+        height: auto;
+        width: auto;
+        padding: 0 10%;
+        border-radius: 25px;
+    }
+
+    .account-type .account-type-buttons button {
+        height: 30px;
+        border: none;
+        font-size: 14px;
+        font-weight: 200;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .LoginForm form h1 {
+        font-size: 16px;
+        color: #3C3C3C;
+        /* border: 1px solid black; */
+    }
+}

@@ -1,0 +1,19 @@
+
+.PaymentHistory {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid red;
+}
+/* 
+.OperationButtons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: 1px solid red;
+}
+
+.List {
+    height: 20rem;
+    overflow: auto;
+} */

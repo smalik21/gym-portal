@@ -1,0 +1,35 @@
+
+.DeletePackageButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+    width: 3rem;
+    color: rgba(0, 0, 0, 0.664);
+    background: #FE968F;
+    border-radius: 0.4rem;
+    border: 1px solid;
+
+    margin-left: 10rem;
+    margin-top: -1.5rem;
+}
+
+.DeletePackageButton:hover {
+    cursor: pointer;
+    color: white;
+    background: #f94336;
+    border-color: #f94336;
+}
+
+.DeletePackageButton:active {
+    background: #FE968F;
+}
+
+@media (max-width: 768px) {
+    .DeletePackageButton {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-left: 9.5rem;
+        margin-top: -1rem;
+    }
+}

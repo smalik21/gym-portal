@@ -1,0 +1,15 @@
+.FeePackages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.FeePackages .FeeCards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    gap: 1rem 0.5rem;
+    /* border: 1px solid red; */
+}

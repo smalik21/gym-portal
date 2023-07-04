@@ -1,0 +1,109 @@
+
+.OperationButton {
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 2.2rem;
+    padding: 0.5rem;
+    gap: 0.7rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    /* transition: box-shadow 0.3s ease-in-out; */
+}
+
+.OperationButton:hover {
+    cursor: pointer;
+}
+
+.OperationButton:active {
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.OperationButton.purple {
+    background: #D4B9FF;
+}
+.OperationButton.purple:hover {
+    background: #a268ff;
+    border-color: #a268ff;
+}
+
+.OperationButton.green {
+    background: #98DE7F;
+}
+.OperationButton.green:hover {
+    background: #77e051;
+    border-color: #77e051;
+}
+
+.OperationButton.orange {
+    background: #F1D779;
+}
+.OperationButton.orange:hover {
+    background: #eec83f;
+    border-color: #eec83f;
+}
+
+.OperationButton.red {
+    background: #FE968F;
+}
+.OperationButton.red:hover {
+    background: #f7594e;
+    border-color: #f7594e;
+}
+
+.OperationButton .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 0.3125rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    /* background: #EBDFFF; */
+}
+
+.OperationButton.black .icon {
+    border: 1px solid #fff;
+}
+
+.OperationButton .data {
+    /* border: 1px solid; */
+}
+
+.OperationButton p {
+    margin: 0;
+    /* padding: 0; */
+    /* border: 1px solid black; */
+}
+
+.OperationButton .title {
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.OperationButton .sub-title {
+    font-size: 0.8rem;
+    /* font-weight: lighter; */
+    line-height: 0.8rem;
+}
+
+@media (max-width: 660px) {
+    .OperationButton {
+        padding: 0.4rem;
+        width: 6rem;
+    }
+    .OperationButton .icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    .OperationButton .title {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    .OperationButton .sub-title {
+        font-size: 0.6rem;
+    }
+}

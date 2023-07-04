@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap');
+
+.Login {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/login-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Inter', sans-serif;
+}
+
+h1.header {
+    position: absolute;
+    top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    color: white;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.alert {
+    height: 50px;
+    /* bottom: 10%; */
+    /* border: 1px solid red; */
+}
+
+@media (max-width: 450px) {
+    h1.header {
+        position: relative;
+        top: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        border: 1px solid red;
+    }
+
+    .Login {
+        justify-content: start;
+    }
+}

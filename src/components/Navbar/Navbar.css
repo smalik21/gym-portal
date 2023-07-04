@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap');
+
+.navbar-toggle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    z-index: 3;
+}
+
+.navbar-toggle.true {
+    transform: translate(15rem);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    /* min-width: 250px; Set the minimum width to 250px */
+    width: 17rem;
+    background-color: black;
+    /* border: 1px solid red; */
+}
+
+.Navbar h1 {
+    /* display: inline-flex; */
+    padding: 0.95rem 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    /* text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8); */
+    /* border-bottom: 1px solid white; */
+}
+
+.Navbar .line {
+    height: 1px;
+    width: 80%;
+    background-color: rgba(73, 72, 72, 0.8);
+}
+
+.Navbar .nav-buttons {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 0.9375rem;
+    width: 80%;
+    padding: 1.5rem 0;
+
+}
+
+.Navbar .nav-button {
+    height: 40px;
+    /* margin-top: 20px; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    background: none;
+    border-radius: 5px;
+}
+
+.Navbar .nav-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.nav-button.selected {
+    color: black;
+    background-color: white;
+}
+
+.nav-button.selected:hover {
+    color: black;
+    background-color: white;
+}
+
+.Navbar .Logout {
+    height: auto;
+    padding: 0.8rem 0 1.1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    background: none;
+}
+
+.Navbar .Logout:hover {
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 992px) {
+    /* navbar-toggle */
+    .navbar {
+        position: absolute;
+        width: 15rem;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    /* vertical align */
+    .Navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-toggle {
+        position: relative;
+        width: 100%;
+        height: 30px;
+        margin: 0;
+    }
+
+    .navbar-toggle.true {
+        transform: none;
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        /* margin-bottom: 20px; */
+    }
+}

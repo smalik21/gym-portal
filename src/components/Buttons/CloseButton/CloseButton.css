@@ -1,0 +1,31 @@
+
+.CloseButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -0.3rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: rgba(0, 0, 0, 0.432);
+    background: #FE968F;
+    border-radius: 0.4rem;
+    border: 1px solid;
+}
+
+.CloseButton:hover {
+    cursor: pointer;
+    color: white;
+    background: #f94336;
+    border-color: #f94336;
+}
+
+.CloseButton:active {
+    background: #FE968F;
+}
+
+@media (max-width: 350px) {
+    .CloseButton {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+}

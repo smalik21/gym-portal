@@ -1,0 +1,11 @@
+.User {
+    display: flex;
+    height: 100vh;
+}
+
+@media (max-width: 500px) {
+    /* vertical align */
+    .User {
+        flex-direction: column;
+    }
+}

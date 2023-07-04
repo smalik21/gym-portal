@@ -1,0 +1,153 @@
+.AdminForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.AdminForm .form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 30rem;
+  padding: 2rem;
+  gap: 2.5rem;
+  background: #f0eef6;
+  border-radius: 0.37rem;
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.142); 
+  /* backdrop-filter: blur(10px); */
+  /* opacity: 0.95; */
+}
+
+.AdminForm .form-heading {
+  margin: 0;
+  width: 100%;
+  /* border: 1px solid; */
+}
+
+.AdminForm .form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem 1rem;
+  /* border: 1px solid; */
+}
+
+.AdminForm .form-fields .name {
+  margin-right: 100%;
+  /* border: 1px solid; */
+}
+
+.AdminForm .submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #98DE7F;
+  border-radius: 0.37rem;
+  border: 1px solid;
+}
+
+.AdminForm .submit-button:hover {
+  cursor: pointer;
+  color: white;
+    background-color: #54ad34;
+    border-color: #77e051;
+}
+
+.AdminForm .submit-button:active {
+  background-color: #98DE7F;
+}
+
+.AdminForm .close-button {
+  position: absolute;
+  margin-left: 32rem;
+  margin-top: -2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background: #FE968F;
+  border-radius: 0 0.37rem;
+  border: 1px solid;
+}
+
+.AdminForm .close-button:hover {
+  cursor: pointer;
+  color: white;
+    background: #f94336;
+    border-color: #f94336;
+}
+
+.AdminForm .close-button:active {
+  background: #FE968F;
+}
+
+@media (max-width: 600px) {
+  .AdminForm {
+    position: absolute;
+  }
+
+  .AdminForm .form-container {
+    /* justify-content: center; */
+    align-items: center;
+    width: 20rem;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .AdminForm .form-fields {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .AdminForm .form-heading {
+    font-size: 1.2rem;
+    width: fit-content;
+  }
+
+  .AdminForm .form-fields .name {
+    margin-right: 0;
+  }
+
+  .AdminForm .close-button {
+    margin-left: 20rem;
+    margin-top: -1rem;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .AdminForm .form-container {
+    /* justify-content: center; */
+    align-items: center;
+    /* width: 20rem; */
+    padding: 1rem 0;
+    gap: 1.5rem;
+  }
+
+  .AdminForm .close-button {
+    margin-left: 18.5rem;
+    /* margin-top: -1rem; */
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .AdminForm .submit-button {
+    font-size: 0.8rem;
+  }
+}

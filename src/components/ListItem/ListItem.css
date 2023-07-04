@@ -1,0 +1,92 @@
+
+
+.ListItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    background: #EBDFFF;
+}
+
+.ListItem .name {
+    width: 12rem;
+    font-size: 1rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: black;
+}
+
+.ListItem p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7rem;
+    color: #7D7D7D;
+    font-size: 0.7rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* border: 1px solid; */
+}
+
+.ListItem .status {
+    width: 6rem;
+}
+
+.ListItem .package {
+    font-weight: 600;
+}
+
+.ListItem .pay-status {
+    width: 12rem;
+}
+
+.ListItem .amount {
+    font-size: 0.8rem;
+    font-weight: 800;
+    width: 5rem;
+}
+
+.ListItem .description {
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 30rem;
+    /* overflow: hidden; */
+}
+
+@media (max-width: 1150px) {
+    .ListItem .description {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ListItem .name {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 660px) {
+    .ListItem {
+        width: 100%;
+        /* height: fit-content; */
+    }
+
+    .ListItem .name {
+        justify-content: flex-start;
+        /* height: fit-content */
+    }
+}
+
+@media (max-width: 380px) {
+    .ListItem .name {
+        width: fit-content;
+        font-weight: 400;
+    }
+}

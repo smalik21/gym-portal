@@ -1,0 +1,90 @@
+
+
+.StatCard {
+    display: flex;
+    /* align-items: center; */
+    width: 8rem;
+    height: 3.8rem;
+    padding: 0.8rem;
+    gap: 0.7rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    /* background-color: #D4B9FF; */
+}
+
+.StatCard.purple {
+    background: #D4B9FF;
+}
+.StatCard.green {
+    background: #98DE7F;
+}
+.StatCard.orange {
+    background: #F1D779;
+}
+.StatCard.black {
+    color: white;
+    background: #0D0D0D;
+}
+.StatCard.red {
+    background: #FE968F;
+}
+
+.StatCard .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    /* background: #EBDFFF; */
+}
+
+.StatCard.black .icon {
+    border: 1px solid #fff;
+}
+
+p {
+    margin: 0;
+    /* padding: 0; */
+    /* border: 1px solid black; */
+}
+
+.StatCard .title {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 800;
+}
+
+.StatCard .sub-title {
+    font-size: 1rem;
+    /* font-weight: lighter; */
+    line-height: 0.8rem;
+}
+
+.StatCard .value {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+}
+
+@media (max-width: 660px) {
+    .StatCard {
+        padding: 0.5rem;
+        width: 6rem;
+    }
+    .StatCard .icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    .StatCard .title {
+        font-size: 0.8rem;
+    }
+    .StatCard .sub-title {
+        font-size: 0.8rem;
+    }
+    .StatCard .value {
+        font-size: 1rem;
+    }
+}

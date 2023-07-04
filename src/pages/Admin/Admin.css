@@ -1,0 +1,12 @@
+.Admin {
+    display: flex;
+    height: 100vh;
+}
+
+@media (max-width: 500px) {
+    /* vertical align */
+    .Admin {
+        flex-direction: column;
+        justify-content: start;
+    }
+}

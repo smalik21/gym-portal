@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* .Profile .body {
+    gap: 1.5rem;
+} */
+.Profile .details {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 0.37rem;
+    /* border: 1px solid; */
+}
+
+.Profile p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    /* padding: 0.5rem; */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    width: auto;
+    color: rgba(0, 0, 0, 0.404);
+    /* border: 0.5px solid blue; */
+}
+
+.Profile p span {
+    /* padding: 0 1rem; */
+    font-size: 1.2rem;
+    /* font-weight: 400; */
+    color: rgba(0, 0, 0, 0.786);
+    /* border: 0.2px solid red; */
+}
+
+.Profile .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px solid; */
+}
+
+.Profile .name {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem; */
+    
+    /* border: 2px solid yellow; */
+}
+
+.Profile .name span {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 2rem;
+    /* border: 1px solid; */
+}
+
+.Profile .id {
+    /* padding-top: 0; */
+    /* font-size: 1rem; */
+}
+
+.Profile .id span {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.786);
+}
+
+.Profile button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    border-radius: 0.37rem;
+    background-color: #F1D779;
+}
+
+.Profile button:hover {
+    cursor: pointer;
+    background: #eec83f;
+    border-color: #eec83f;
+}
+
+.Profile button:active {
+    background: #F1D779;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.Profile .username {
+    margin: 2rem 0 0;
+}
+
+.Profile .cols {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20%;
+    /* margin: 2rem 0; */
+    /* border: 1px solid; */
+}
+
+.Profile .col1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.Profile .account-status {
+    /* display: flex;
+    width: 15rem; */
+    /* border: 1px solid; */
+}
+
+.Profile .account-type {
+    /* display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 15rem; */
+    /* border: 1px solid; */
+}
+
+.Profile .col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.Profile .phone {
+    /* display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 15rem; */
+    /* border: 1px solid; */
+}
+
+.Profile .email {
+    /* display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 20rem; */
+    /* border: 1px solid; */
+}
+
+@media (max-width: 660px) {
+    .Profile .cols {
+        flex-direction: column;
+    }
+
+    .Profile .username {
+        margin: 0;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .Profile .details {
+        padding: 1rem;
+    }
+
+    .Profile p {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+    
+    .Profile p span {
+        font-size: 1rem;
+    }
+
+    .Profile .name span {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .Profile .cols {
+        flex-direction: column;
+    }
+    .Profile button {
+        width: 2.5rem;
+        height: 2rem;
+    }
+}

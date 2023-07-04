@@ -1,0 +1,23 @@
+
+.ViewDetailsButton {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 1.3rem;
+    width: 5rem;
+    color: #7d7d7d84;
+    font-size: 0.7rem;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    /* border: 1px solid; */
+}
+
+.ViewDetailsButton:hover {
+    cursor: pointer;
+    color: #7D7D7D;
+}
+
+.ViewDetailsButton:active {
+    color: #7d7d7d84;
+}
