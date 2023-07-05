@@ -29,51 +29,51 @@ export default function Members() {
     // http://localhost:5000/admin/
     const fetchMembers = async () => {
         try {
-            const response = await axios.get('admin/members');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/members');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.name.localeCompare(b.name));
 
             setMembers(response.data);
-            console.log("Members Loaded:", response.data);
+            // console.log("Members Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving members:', error.response.data);
+            // console.error('Error retrieving members:', error.response.data);
         }
     };
 
     const addMember = async (memberData) => {
         try {
-            const response = await axios.post('admin/member', memberData);
+            const response = await axios.post(process.env.REACT_APP_SERVER_URL+'admin/member', memberData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
             fetchMembers();
         } catch (error) {
-            console.error('Error adding member:', error.response.data);
+            // console.error('Error adding member:', error.response.data);
         }
     };
 
     const updateMember = async (memberId, updatedData) => {
         try {
-            const response = await axios.put(`admin/member/${memberId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/member/${memberId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
             fetchMembers();
         } catch (error) {
-            console.error('Error updating member:', error.response.data);
+            // console.error('Error updating member:', error.response.data);
         }
     };
 
     const deleteMembers = async (memberId) => {
         try {
-            const response = await axios.delete(`admin/member/${memberId}`);
-            console.log(response.data);
+            const response = await axios.delete(process.env.REACT_APP_SERVER_URL+`admin/member/${memberId}`);
+            // console.log(response.data);
             fetchMembers();
 
         } catch (error) {
-            console.error('Error deleting members:', error.response.data);
+            // console.error('Error deleting members:', error.response.data);
         }
     };
 
@@ -119,7 +119,7 @@ export default function Members() {
         if (activeButton[0] == "Delete") {
             const confirmDelete = window.confirm('Are you sure you want to delete this Member?');
             if (confirmDelete) {
-                console.log("Delete Member: ")
+                // console.log("Delete Member: ")
                 deleteMembers(recordId);
             }
         }
@@ -128,7 +128,7 @@ export default function Members() {
             setUpdatedMember([foundMember]);
             setFormType("Update");
             setShowForm(true);
-            console.log("Member To Be Updated:", foundMember);
+            // console.log("Member To Be Updated:", foundMember);
         }
 
         setActiveButton([]);
@@ -138,7 +138,7 @@ export default function Members() {
         setShowForm(false);
         setFormType("");
         setActiveButton([]);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -149,22 +149,22 @@ export default function Members() {
         }
         else {
             addMember(newDetails[0]);
-            console.log("New Member Data:", newDetails[0]);
+            // console.log("New Member Data:", newDetails[0]);
         }
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
         if (operations[operationIdx].name === "Add New") {
             setFormType("Add New");
             setShowForm(true);
         }
         else {
             setActiveButton([operations[operationIdx].name]);
-            console.log(operations[operationIdx].name)
+            // console.log(operations[operationIdx].name)
         }
     }
 

@@ -5,6 +5,8 @@
     width: 30px;
     height: 30px;
     margin-top: 15px;
+    background-color: black;
+    border-color: white;
     z-index: 3;
 }
 

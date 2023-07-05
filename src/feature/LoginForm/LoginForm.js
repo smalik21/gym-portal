@@ -32,13 +32,13 @@ export default function LoginForm({ onClick, onChange }) {
         // Handle login logic based on the selected user account
         if (currentAccount === "Admin") {
             // Login with account 1
-            console.log('Logging in with Admin Account:', username, password);
+            // console.log('Logging in with Admin Account:', username, password);
         } else if (currentAccount === "Member") {
             // Login with account 2
-            console.log('Logging in with Member Account:', username, password);
+            // console.log('Logging in with Member Account:', username, password);
         } else {
             // Login with account 3
-            console.log('Logging in with User Account:', username, password);
+            // console.log('Logging in with User Account:', username, password);
         }
 
         // send info to Login
@@ -86,7 +86,7 @@ export default function LoginForm({ onClick, onChange }) {
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                     size='small'
-                    fullWidth='true'
+                    // fullWidth=true
                     margin='normal'
                 />
                 <TextField
@@ -99,7 +99,7 @@ export default function LoginForm({ onClick, onChange }) {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     size='small'
-                    fullWidth='true'
+                    // fullWidth=true
                     margin='normal'
                 />
                 </ThemeProvider>

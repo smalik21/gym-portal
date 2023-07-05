@@ -8,7 +8,7 @@ export default function BillReceiptCard({ id, memberId, memberName, monthlyAmt, 
       onPay(id, 1);
     }
     else {
-      console.log("Bill Already Paid.");
+      // console.log("Bill Already Paid.");
     }
   }
 

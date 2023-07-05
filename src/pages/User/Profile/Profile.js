@@ -5,6 +5,7 @@ import { AuthContext } from '../../../AuthContext';
 import Header from '../../../components/Header/Header';
 import UserForm from '../../../feature/UserForm/UserForm';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import dotenv from 'react-dotenv';
 
 export default function Profile() {
     const { accountId } = useContext(AuthContext);
@@ -29,24 +30,24 @@ export default function Profile() {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get(`user/user/${accountId}`);
-            console.log(response);
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+`user/user/${accountId}`);
+            // console.log(response);
             setUser(response.data);
-            console.log("User Loaded:", response.data);
+            // console.log("User Loaded:", response.data);
         } catch (error) {
-            console.error('Error retrieving user:', error.response.data);
+            // console.error('Error retrieving user:', error.response.data);
         }
     };
 
     const updateUser = async (accountId, updatedData) => {
         try {
-            const response = await axios.put(`user/user/${accountId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`user/user/${accountId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh user list
             fetchUser();
         } catch (error) {
-            console.error('Error updating user:', error.response.data);
+            // console.error('Error updating user:', error.response.data);
         }
     };
 
@@ -56,7 +57,7 @@ export default function Profile() {
 
     const handleClose = () => {
         setShowForm(false);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -64,7 +65,7 @@ export default function Profile() {
         updateUser(accountId, newDetails[0]);
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     return (

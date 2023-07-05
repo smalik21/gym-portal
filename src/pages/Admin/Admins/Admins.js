@@ -31,50 +31,50 @@ export default function Admins() {
     // http://localhost:5000/admin/
     const fetchAdmins = async () => {
         try {
-            const response = await axios.get('admin/admins');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/admins');
 
             response.data.sort((a, b) => a.name.localeCompare(b.name));
 
             setAdmins(response.data);
-            console.log("Admins Loaded:", response.data);
+            // console.log("Admins Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving admins:', error.response.data);
+            // console.error('Error retrieving admins:', error.response.data);
         }
     };
 
     const addAdmin = async (adminData) => {
         try {
-            const response = await axios.post('admin/admin', adminData);
+            const response = await axios.post(process.env.REACT_APP_SERVER_URL+'admin/admin', adminData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh admins list
             fetchAdmins();
         } catch (error) {
-            console.error('Error adding admins:', error.response.data);
+            // console.error('Error adding admins:', error.response.data);
         }
     };
 
     const updateAdmin = async (adminId, updatedData) => {
         try {
-            const response = await axios.put(`admin/admin/${adminId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/admin/${adminId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
             fetchAdmins();
         } catch (error) {
-            console.error('Error updating admins:', error.response.data);
+            // console.error('Error updating admins:', error.response.data);
         }
     };
 
     const deleteAdmins = async (adminId) => {
         try {
-            const response = await axios.delete(`admin/admin/${adminId}`);
-            console.log(response.data);
+            const response = await axios.delete(process.env.REACT_APP_SERVER_URL+`admin/admin/${adminId}`);
+            // console.log(response.data);
             fetchAdmins();
 
         } catch (error) {
-            console.error('Error deleting admins:', error.response.data);
+            // console.error('Error deleting admins:', error.response.data);
         }
     };
 
@@ -120,7 +120,7 @@ export default function Admins() {
     const handleResponse = (recordId, buttonIdx) => {
 
         if (activeButton[0] == "Delete") {
-            console.log("Delete Admin: ")
+            // console.log("Delete Admin: ")
             deleteAdmins(recordId);
         }
         else if (activeButton[0] == "Update") {
@@ -128,7 +128,7 @@ export default function Admins() {
             setUpdatedAdmin([foundAdmin]);
             setFormType("Update");
             setShowForm(true);
-            console.log("Admin To Be Updated:", foundAdmin);
+            // console.log("Admin To Be Updated:", foundAdmin);
         }
 
         setActiveButton([]);
@@ -137,7 +137,7 @@ export default function Admins() {
     const handleClose = () => {
         setShowForm(false);
         setFormType("");
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -148,15 +148,15 @@ export default function Admins() {
         }
         else {
             addAdmin(newDetails[0]);
-            console.log("New Admin Data:", newDetails[0]);
+            // console.log("New Admin Data:", newDetails[0]);
         }
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
         if (operations[operationIdx].name === "Add New") {
             setFormType("Add New");
             setShowForm(true);
@@ -164,7 +164,7 @@ export default function Admins() {
         else {
             if(accountType === "master") {
                 setActiveButton([operations[operationIdx].name]);
-                console.log(operations[operationIdx].name)
+                // console.log(operations[operationIdx].name)
             }
         }
     }

@@ -29,55 +29,55 @@ export default function Notifications() {
     // http://localhost:5000/admin/
     const fetchMembers = async () => {
         try {
-            const response = await axios.get('admin/members');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/members');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.name.localeCompare(b.name));
 
             setMembers(response.data);
-            console.log("Members Loaded:", response.data);
+            // console.log("Members Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving members:', error.response.data);
+            // console.error('Error retrieving members:', error.response.data);
         }
     };
 
     const updateMembers = async (memberId, newNotification) => {
         try {
             // console.log("new notification:", newNotification);
-          const response = await axios.put(`/admin/member/${memberId}/notifications`, {"notification": newNotification});
-          console.log(response.data);
+          const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/member/${memberId}/notifications`, {"notification": newNotification});
+        //   console.log(response.data);
           fetchMembers();
           // Handle success or perform any necessary actions
         } catch (error) {
-          console.error('Error updating notifications:', error.response.data);
+        //   console.error('Error updating notifications:', error.response.data);
           // Handle error or display an error message
         }
       };
 
     const fetchMessages = async () => {
         try {
-            const response = await axios.get('admin/notification');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/notification');
 
             setCustomMessage(response.data[0].customMessage);
             setPaymentReminder(response.data[0].paymentReminder);
             setMessageId(response.data[0]._id);
 
-            console.log("Messages Loaded:", response.data);
+            // console.log("Messages Loaded:", response.data);
 
         } catch (error) {
-            console.error('Error retrieving messages:', error.response.data);
+            // console.error('Error retrieving messages:', error.response.data);
         }
     };
 
     const updateMessages = async (messageId, newMessage) => {
         try {
-          const response = await axios.put(`/admin/notification/${messageId}`, newMessage);
-          console.log(response.data);
+          const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/notification/${messageId}`, newMessage);
+        //   console.log(response.data);
           fetchMessages();
           // Handle success or perform any necessary actions
         } catch (error) {
-          console.error('Error updating messages:', error.response.data);
+        //   console.error('Error updating messages:', error.response.data);
           // Handle error or display an error message
         }
       };
@@ -116,7 +116,7 @@ export default function Notifications() {
     const handleClose = () => {
         setShowForm(false);
         setActiveButton([]);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     // handle Custom Message Change
@@ -130,18 +130,18 @@ export default function Notifications() {
         updateMessages(messageId, newMessage);
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
         if(operations[operationIdx].name === "Edit Default") {
             // setFormType("Edit Custom");
             setShowForm(true);
         }
         else {
             setActiveButton([operations[operationIdx].name]);
-            console.log(operations[operationIdx].name)
+            // console.log(operations[operationIdx].name)
         }
     }
 

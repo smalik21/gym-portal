@@ -43,16 +43,16 @@ export default function BillForm({ type, details, onClose, onSubmit }) {
 
     const fetchMembers = async () => {
         try {
-            const response = await axios.get('admin/members');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/members');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.name.localeCompare(b.name));
 
             setMembers(response.data);
-            console.log("Members Loaded:", response.data);
+            // console.log("Members Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving members:', error.response.data);
+            // console.error('Error retrieving members:', error.response.data);
         }
     };
 
@@ -67,7 +67,7 @@ export default function BillForm({ type, details, onClose, onSubmit }) {
         setMemberId(foundMember ? foundMember._id : '');
         setMonthlyAmt(foundMember ? foundMember.package_type.amt : '');
 
-        console.log("Found Member:", foundMember);
+        // console.log("Found Member:", foundMember);
     }
 
     const handleClose = (e) => {

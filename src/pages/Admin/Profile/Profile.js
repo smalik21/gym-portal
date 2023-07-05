@@ -5,6 +5,7 @@ import { AuthContext } from '../../../AuthContext';
 import Header from '../../../components/Header/Header';
 import AdminForm from '../../../feature/AdminForm/AdminForm';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import dotenv from 'react-dotenv';
 
 
 export default function Profile() {
@@ -30,24 +31,24 @@ export default function Profile() {
 
     const fetchAdmin = async () => {
         try {
-            const response = await axios.get(`admin/admin/${accountId}`);
-            console.log(response);
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+`admin/admin/${accountId}`);
+            // console.log(response);
             setAdmin(response.data);
-            console.log("Admin Loaded:", response.data);
+            // console.log("Admin Loaded:", response.data);
         } catch (error) {
-            console.error('Error retrieving admin:', error.response.data);
+            // console.error('Error retrieving admin:', error.response.data);
         }
     };
 
     const updateUser = async (accountId, updatedData) => {
         try {
-            const response = await axios.put(`admin/admin/${accountId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/admin/${accountId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh admin list
             fetchAdmin();
         } catch (error) {
-            console.error('Error updating admin:', error.response.data);
+            // console.error('Error updating admin:', error.response.data);
         }
     };
 
@@ -57,7 +58,7 @@ export default function Profile() {
 
     const handleClose = () => {
         setShowForm(false);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -65,7 +66,7 @@ export default function Profile() {
         updateUser(accountId, newDetails[0]);
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     return (

@@ -43,15 +43,15 @@ export default function MemberForm({ type, details, onClose, onSubmit }) {
 
   const fetchPackages = async () => {
     try {
-      const response = await axios.get('admin/packages');
+      const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/packages');
 
-      console.log("response:", response);
-      console.log("Packages Loaded:", response.data);
+      // console.log("response:", response);
+      // console.log("Packages Loaded:", response.data);
 
       setPackages(response.data);
       // setStats(members);
     } catch (error) {
-      console.error('Error retrieving packages:', error.response.data);
+      // console.error('Error retrieving packages:', error.response.data);
     }
   };
 

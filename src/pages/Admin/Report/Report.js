@@ -11,7 +11,7 @@ export default function Report() {
     ]
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
     }
 
     return (
@@ -35,6 +35,7 @@ export default function Report() {
                         )
                     })}
                 </div>
+                <h5>Downloading Report is not available right now...</h5>
             </div>
             
         </div>

@@ -5,6 +5,7 @@ import { AuthContext } from '../../../AuthContext';
 import Header from '../../../components/Header/Header';
 import MemberForm from '../../../feature/MemberForm/MemberForm';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
+import dotenv from 'react-dotenv';
 
 export default function Profile() {
     const { accountId } = useContext(AuthContext);
@@ -37,24 +38,24 @@ export default function Profile() {
 
     const fetchMember = async () => {
         try {
-            const response = await axios.get(`member/member/${accountId}`);
-            console.log(response);
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+`member/member/${accountId}`);
+            // console.log(response);
             setMember(response.data);
-            console.log("Member Loaded:", response.data);
+            // console.log("Member Loaded:", response.data);
         } catch (error) {
-            console.error('Error retrieving member:', error.response.data);
+            // console.error('Error retrieving member:', error.response.data);
         }
     };
 
     const updateMember = async (accountId, updatedData) => {
         try {
-            const response = await axios.put(`member/member/${accountId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`member/member/${accountId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
             fetchMember();
         } catch (error) {
-            console.error('Error updating member:', error.response.data);
+            // console.error('Error updating member:', error.response.data);
         }
     };
 
@@ -64,7 +65,7 @@ export default function Profile() {
 
     const handleClose = () => {
         setShowForm(false);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -72,7 +73,7 @@ export default function Profile() {
         updateMember(accountId, newDetails[0]);
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     return (

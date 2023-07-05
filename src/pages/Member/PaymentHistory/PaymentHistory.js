@@ -31,44 +31,44 @@ export default function PaymentHistory() {
 
     const fetchBills = async () => {
         try {
-            const response = await axios.get(`member/bills/${accountId}`);
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+`member/bills/${accountId}`);
             // response.data.sort((a, b) => a.memberName.localeCompare(b.memberName));
 
             setBills(response.data);
-            console.log("Bills Loaded:", response.data);
+            // console.log("Bills Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving bills:', error.response.data);
+            // console.error('Error retrieving bills:', error.response.data);
         }
     };
 
     const updateMember = async (memberId, updatedData) => {
         try {
-            const response = await axios.put(`admin/member/${memberId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/member/${memberId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
         } catch (error) {
-            console.error('Error updating member:', error.response.data);
+            // console.error('Error updating member:', error.response.data);
         }
     };
 
     const updateBill = async (billId, updatedData) => {
         try {
-            const response = await axios.put(`member/bill/${billId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`member/bill/${billId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
 
             fetchBills();
         } catch (error) {
-            console.error('Error updating bill:', error.response.data);
+            // console.error('Error updating bill:', error.response.data);
         }
     };
 
     const setPaymentStatus = () => {
         const foundPendingBill = bills.find((bill) => bill.status === "pending");
         if (foundPendingBill) {
-            console.log("Found Pending Bills");
+            // console.log("Found Pending Bills");
             const updatedMemberData = {
                
                     payment_status: "pending"
@@ -83,7 +83,7 @@ export default function PaymentHistory() {
             
             };
             updateMember(accountId, updatedMemberData);
-            console.log("Member's Payment Status Updated.");
+            // console.log("Member's Payment Status Updated.");
         }
     }
 
@@ -92,7 +92,7 @@ export default function PaymentHistory() {
 
     const handleResponse = (billId, buttonIdx) => {
 
-        console.log("response:", buttonIdx);
+        // console.log("response:", buttonIdx);
         if (buttons[buttonIdx] === "Pay") {
             const updatedData = {
                 $set: {
@@ -107,7 +107,7 @@ export default function PaymentHistory() {
         else {
             const selected = bills.find((bill) => bill._id === billId);
             setSelectedBill(selected);
-            console.log("Selected Bill:", selected);
+            // console.log("Selected Bill:", selected);
             setShowForm(true);
 
         }

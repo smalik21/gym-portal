@@ -7,10 +7,6 @@ import PackageForm from '../../../feature/PackageForm/PackageForm';
 import OperationButton from '../../../components/Buttons/OperationButton/OperationButton';
 
 export default function FeePackages() {
-// name: { type: String, required: true },
-// tagLine: { type: String },
-// price: { type: Number, required: true },
-// description: { type: Array, default: [] },
 
     const [packages, setPackages] = useState([]);
     const [activeButton, setActiveButton] = useState([]);
@@ -23,58 +19,53 @@ export default function FeePackages() {
         setActiveButton([]);
     }, []);
 
-    // useEffect(() => {
-    //     setActiveButton([]);
-    // }, [packages]);
-
-    // http://localhost:5000/admin/
     const fetchPackages = async () => {
         try {
-            const response = await axios.get('admin/packages');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/packages');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.name.localeCompare(b.name));
 
             setPackages(response.data);
-            console.log("Packages Loaded:", response.data);
+            // console.log("Packages Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving packages:', error.response.data);
+            // console.error('Error retrieving packages:', error.response.data);
         }
     };
 
     const addPackage = async (packageData) => {
         try {
-            const response = await axios.post('admin/package', packageData);
+            const response = await axios.post(process.env.REACT_APP_SERVER_URL+'admin/package', packageData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh user list
             fetchPackages();
         } catch (error) {
-            console.error('Error adding package:', error.response.data);
+            // console.error('Error adding package:', error.response.data);
         }
     };
 
     const updatePackage = async (packageId, updatedData) => {
         try {
-            const response = await axios.put(`admin/package/${packageId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/package/${packageId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
 
             fetchPackages();
         } catch (error) {
-            console.error('Error updating package:', error.response.data);
+            // console.error('Error updating package:', error.response.data);
         }
     };
 
     const deletePackages = async (packageId) => {
         try {
-            const response = await axios.delete(`admin/package/${packageId}`);
-            console.log(response.data);
+            const response = await axios.delete(process.env.REACT_APP_SERVER_URL+`admin/package/${packageId}`);
+            // console.log(response.data);
             fetchPackages();
 
         } catch (error) {
-            console.error('Error deleting packages:', error.response.data);
+            // console.error('Error deleting packages:', error.response.data);
         }
     };
 
@@ -87,14 +78,14 @@ export default function FeePackages() {
     ]
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
         if (operations[operationIdx].name === "Add New") {
             setFormType("Add New");
             setShowForm(true);
         }
         else {
             setActiveButton([operations[operationIdx].name]);
-            console.log(operations[operationIdx].name)
+            // console.log(operations[operationIdx].name)
         }
     }
 
@@ -103,7 +94,7 @@ export default function FeePackages() {
         if (activeButton[0] === "Delete") {
             const confirmDelete = window.confirm('Are you sure you want to delete this Package?');
             if (confirmDelete) {
-                console.log("Delete Package: ")
+                // console.log("Delete Package: ")
                 deletePackages(recordId);
             }
         }
@@ -112,7 +103,7 @@ export default function FeePackages() {
             setUpdatedPackage([foundPackage]);
             setFormType("Update");
             setShowForm(true);
-            console.log("Bill To Be Updated:", foundPackage);
+            // console.log("Bill To Be Updated:", foundPackage);
         }
 
         setActiveButton([]);
@@ -123,7 +114,7 @@ export default function FeePackages() {
         setFormType("");
         setUpdatedPackage([]);
         setActiveButton([]);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -132,16 +123,16 @@ export default function FeePackages() {
                 $set: newDetails[0]
             };
             updatePackage(updatedPackage[0]._id, updatedData);
-            console.log("Old Data:", updatedPackage[0]);
-            console.log("New Data:", updatedData);
+            // console.log("Old Data:", updatedPackage[0]);
+            // console.log("New Data:", updatedData);
         }
         else {
             addPackage(newDetails[0]);
-            console.log("New Package Data:", newDetails[0]);
+            // console.log("New Package Data:", newDetails[0]);
         }
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     return (

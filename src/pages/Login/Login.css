@@ -32,6 +32,32 @@ h1.header {
     /* border: 1px solid red; */
 }
 
+.help-section {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    gap: 0.5rem;
+}
+
+.help-section h5 {
+    opacity: 0.5;
+    margin: 0;
+    color: white;
+    font-weight: 400;
+}
+
+@media (max-width: 800px) {
+    h1.header {
+        position: relative;
+        margin-bottom: 5rem;
+    }
+    .help-section {
+        position: relative;
+    }
+}
+
 @media (max-width: 450px) {
     h1.header {
         position: relative;

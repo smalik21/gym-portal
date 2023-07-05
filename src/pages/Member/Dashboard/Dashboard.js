@@ -5,6 +5,7 @@ import { AuthContext } from '../../../AuthContext';
 import Header from '../../../components/Header/Header';
 import Stats from '../../../components/Stats/Stats';
 import ListItem from '../../../components/ListItem/ListItem';
+import dotenv from 'react-dotenv';
 
 export default function Dashboard() {
     const { accountId } = useContext(AuthContext);
@@ -36,24 +37,24 @@ export default function Dashboard() {
 
     const fetchMember = async () => {
         try {
-            const response = await axios.get(`member/member/${accountId}`);
-            console.log(response);
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+`member/member/${accountId}`);
+            // console.log(response);
             setMember(response.data);
-            console.log("Member Loaded:", response.data);
+            // console.log("Member Loaded:", response.data);
         } catch (error) {
-            console.error('Error retrieving member:', error.response.data);
+            // console.error('Error retrieving member:', error.response.data);
         }
     };
 
     const updateNotifications = async (memberId, updatedData) => {
         try {
-            const response = await axios.put(`member/member/${memberId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`member/member/${memberId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member data
             fetchMember();
         } catch (error) {
-            console.error('Error updating member:', error.response.data);
+            // console.error('Error updating member:', error.response.data);
         }
     };
 
@@ -88,7 +89,7 @@ export default function Dashboard() {
     const buttons = ["Close"];
 
     const handleResponse = (notificationIdx, button) => {
-        console.log("Clicked:", member.notifications[notificationIdx]);
+        // console.log("Clicked:", member.notifications[notificationIdx]);
         const newNotifications = member.notifications;
         newNotifications.splice(notificationIdx, 1);
 

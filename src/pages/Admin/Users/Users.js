@@ -6,6 +6,7 @@ import Stats from '../../../components/Stats/Stats';
 import OperationButton from '../../../components/Buttons/OperationButton/OperationButton';
 import ListItem from '../../../components/ListItem/ListItem';
 import UserForm from '../../../feature/UserForm/UserForm';
+import dotenv from 'react-dotenv';
 
 export default function Users() {
 
@@ -29,7 +30,7 @@ export default function Users() {
     // http://localhost:5000/admin/
     const fetchUsers = async () => {
         try {
-            const response = await axios.get('admin/users');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/users');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.name.localeCompare(b.name));
@@ -44,7 +45,7 @@ export default function Users() {
 
     const addUser = async (userData) => {
         try {
-            const response = await axios.post('admin/user', userData);
+            const response = await axios.post(process.env.REACT_APP_SERVER_URL+'admin/user', userData);
             // Handle successful response
             console.log(response.data);
             // Refresh user list
@@ -56,7 +57,7 @@ export default function Users() {
 
     const updateUser = async (userId, updatedData) => {
         try {
-            const response = await axios.put(`admin/user/${userId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/user/${userId}`, updatedData);
             // Handle successful response
             console.log(response.data);
             // Refresh member list
@@ -68,7 +69,7 @@ export default function Users() {
 
     const deleteUsers = async (userId) => {
         try {
-            const response = await axios.delete(`admin/user/${userId}`);
+            const response = await axios.delete(process.env.REACT_APP_SERVER_URL+`admin/user/${userId}`);
             console.log(response.data);
             fetchUsers();
 

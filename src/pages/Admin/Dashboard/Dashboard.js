@@ -56,27 +56,27 @@ export default function Dashboard() {
     // http://localhost:5000/admin/
     const fetchMembers = async () => {
         try {
-            const response = await axios.get('admin/members');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/members');
             setMembers(response.data);
-            console.log("Members Loaded:", response.data);
+            // console.log("Members Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving members:', error.response.data);
+            // console.error('Error retrieving members:', error.response.data);
         }
     };
 
     const fetchBills = async () => {
         try {
-            const response = await axios.get('admin/bills');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/bills');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.memberName.localeCompare(b.memberName));
 
             setBills(response.data);
-            console.log("Bills Loaded:", response.data);
+            // console.log("Bills Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving bills:', error.response.data);
+            // console.error('Error retrieving bills:', error.response.data);
         }
     };
 
@@ -108,7 +108,7 @@ export default function Dashboard() {
         setMonthlyEarnings(monthly);
         setTotalEarnings(earnings);
 
-        console.log("Total Members:", totalMembers, "Active Members:", activeMembers, "Pending Payments:", pendingPayments, "Monthly Earnings:", monthlyEarnings, "Total Earnings", totalEarnings);
+        // console.log("Total Members:", totalMembers, "Active Members:", activeMembers, "Pending Payments:", pendingPayments, "Monthly Earnings:", monthlyEarnings, "Total Earnings", totalEarnings);
     }
 
     const stats = [

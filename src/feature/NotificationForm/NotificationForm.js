@@ -21,8 +21,8 @@ export default function NotificationForm({ customMessage, paymentReminder, onClo
         e.preventDefault();
 
         onSubmit(custom_message, payment_reminder);
-        console.log("Form Data:");
-        console.log("CustomMessage:", custom_message, "PaymentReminder", payment_reminder);
+        // console.log("Form Data:");
+        // console.log("CustomMessage:", custom_message, "PaymentReminder", payment_reminder);
 
         setCustomMessage('');
         setPaymentReminder('');

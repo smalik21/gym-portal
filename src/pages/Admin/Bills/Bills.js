@@ -29,51 +29,51 @@ export default function Bills() {
     // http://localhost:5000/admin/
     const fetchBills = async () => {
         try {
-            const response = await axios.get('admin/bills');
+            const response = await axios.get(process.env.REACT_APP_SERVER_URL+'admin/bills');
 
             // Sort members alphabetically by name
             response.data.sort((a, b) => a.memberName.localeCompare(b.memberName));
 
             setBills(response.data);
-            console.log("Bills Loaded:", response.data);
+            // console.log("Bills Loaded:", response.data);
             // setStats(members);
         } catch (error) {
-            console.error('Error retrieving bills:', error.response.data);
+            // console.error('Error retrieving bills:', error.response.data);
         }
     };
 
     const addBill = async (billData) => {
         try {
-            const response = await axios.post('admin/bill', billData);
+            const response = await axios.post(process.env.REACT_APP_SERVER_URL+'admin/bill', billData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh user list
             fetchBills();
         } catch (error) {
-            console.error('Error adding bill:', error.response.data);
+            // console.error('Error adding bill:', error.response.data);
         }
     };
 
     const updateMember = async (memberId, updatedData) => {
         try {
-            const response = await axios.put(`admin/member/${memberId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/member/${memberId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
             // Refresh member list
         } catch (error) {
-            console.error('Error updating member:', error.response.data);
+            // console.error('Error updating member:', error.response.data);
         }
     };
 
     const updateBill = async (billId, updatedData) => {
         try {
-            const response = await axios.put(`admin/bill/${billId}`, updatedData);
+            const response = await axios.put(process.env.REACT_APP_SERVER_URL+`admin/bill/${billId}`, updatedData);
             // Handle successful response
-            console.log(response.data);
+            // console.log(response.data);
 
             fetchBills();
         } catch (error) {
-            console.error('Error updating bill:', error.response.data);
+            // console.error('Error updating bill:', error.response.data);
         }
     };
 
@@ -82,11 +82,11 @@ export default function Bills() {
             // Remove the deleted bill from the bills list
             setBills((prevBills) => prevBills.filter((bill) => bill._id !== billId));
 
-            const response = await axios.delete(`admin/bill/${billId}`);
-            console.log(response.data);
+            const response = await axios.delete(process.env.REACT_APP_SERVER_URL+`admin/bill/${billId}`);
+            // console.log(response.data);
 
         } catch (error) {
-            console.error('Error deleting bills:', error.response.data);
+            // console.error('Error deleting bills:', error.response.data);
         }
     };
 
@@ -131,7 +131,7 @@ export default function Bills() {
     const handleResponse = (recordId, buttonIdx) => {
 
         if (activeButton[0] == "Delete") {
-            console.log("Delete Bill: ")
+            // console.log("Delete Bill: ")
                 deleteBills(recordId);
         }
         else if (activeButton[0] == "Update") {
@@ -139,7 +139,7 @@ export default function Bills() {
             setUpdatedBill([foundBill]);
             setFormType("Update");
             setShowForm(true);
-            console.log("Bill To Be Updated:", foundBill);
+            // console.log("Bill To Be Updated:", foundBill);
         }
     }
 
@@ -148,7 +148,7 @@ export default function Bills() {
         setFormType("");
         setUpdatedBill([]);
         setActiveButton([]);
-        console.log("Form Closed");
+        // console.log("Form Closed");
     }
 
     const handleSubmit = (newDetails) => {
@@ -157,8 +157,8 @@ export default function Bills() {
                 $set: newDetails[0]
             };
             updateBill(updatedBill[0]._id, updatedData);
-            console.log("Old Data:", updatedBill[0]);
-            console.log("New Data:", updatedData);
+            // console.log("Old Data:", updatedBill[0]);
+            // console.log("New Data:", updatedData);
         }
         else {
             addBill(newDetails[0]);
@@ -171,18 +171,18 @@ export default function Bills() {
         }
 
         handleClose();
-        console.log("Form Submitted");
+        // console.log("Form Submitted");
     }
 
     const handleOperation = (operationIdx) => {
-        console.log("operation selected:", operations[operationIdx].name);
+        // console.log("operation selected:", operations[operationIdx].name);
         if (operations[operationIdx].name === "Add New") {
             setFormType("Add New");
             setShowForm(true);
         }
         else {
             setActiveButton([operations[operationIdx].name]);
-            console.log(operations[operationIdx].name)
+            // console.log(operations[operationIdx].name)
         }
     }
 
