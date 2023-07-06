@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap');
 
 .navbar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    width: 30px;
+    width: 25px;
     height: 30px;
     margin-top: 15px;
     background-color: black;
-    border-color: white;
+    border: none;
+    /* color: red; */
     z-index: 3;
 }
 
