@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/gym-portal/static/css/main.3eb54c61.css",
-    "main.js": "/gym-portal/static/js/main.c335cae6.js",
+    "main.css": "/gym-portal/static/css/main.ab2171ea.css",
+    "main.js": "/gym-portal/static/js/main.b030b884.js",
     "static/js/787.6f0f7c46.chunk.js": "/gym-portal/static/js/787.6f0f7c46.chunk.js",
     "static/media/login-background.jpg": "/gym-portal/static/media/login-background.ff647468d93b632652cb.jpg",
     "index.html": "/gym-portal/index.html",
-    "main.3eb54c61.css.map": "/gym-portal/static/css/main.3eb54c61.css.map",
-    "main.c335cae6.js.map": "/gym-portal/static/js/main.c335cae6.js.map",
+    "main.ab2171ea.css.map": "/gym-portal/static/css/main.ab2171ea.css.map",
+    "main.b030b884.js.map": "/gym-portal/static/js/main.b030b884.js.map",
     "787.6f0f7c46.chunk.js.map": "/gym-portal/static/js/787.6f0f7c46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3eb54c61.css",
-    "static/js/main.c335cae6.js"
+    "static/css/main.ab2171ea.css",
+    "static/js/main.b030b884.js"
   ]
 }
