@@ -53,5 +53,6 @@ The GYM Management System has potential for future enhancements, including:
 - Integration of a supplement store with online purchasing options.
 - Inclusion of nutrition advice and personalized training programs for members.
 
-Visit the GYM Portal (https://smalik21.github.io/gym-portal/)
-Check out the GYM Portal Backend Repository (https://github.com/smalik21/gym-portal-backend)
+## Links
+- Visit the GYM Portal (https://smalik21.github.io/gym-portal/)
+- Check out the GYM Portal Backend Repository (https://github.com/smalik21/gym-portal-backend)
